@@ -1,6 +1,6 @@
 using memo
 using Test
 
-@testset "memo.jl" begin
+@testset "memo" begin
     # Write your tests here.
 end
