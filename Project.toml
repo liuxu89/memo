@@ -1,0 +1,13 @@
+name = "memo"
+uuid = "0e62e337-1f6b-4a2b-a2a5-081bbdb68753"
+authors = ["liuxu <liuxu89@mail.ustc.edu.cn> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
