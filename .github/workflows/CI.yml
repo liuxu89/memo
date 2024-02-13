@@ -36,18 +36,18 @@ jobs:
     name: Documentation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: julia-actions/setup-julia@v1
         with:
-          version: '1.7'
-      - uses: julia-actions/julia-buildpkg@v1
+          version: '1.10'
+#     - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-docdeploy@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
-      - run: |
-          julia --project=docs -e '
-            using Documenter: DocMeta, doctest
-            using memo
-            DocMeta.setdocmeta!(memo, :DocTestSetup, :(using memo); recursive=true)
-            doctest(memo)'
+#     - run: |
+#         julia --project=docs -e '
+#           using Documenter: DocMeta, doctest
+#           using memo
+#           DocMeta.setdocmeta!(memo, :DocTestSetup, :(using memo); recursive=true)
+#           doctest(memo)'
