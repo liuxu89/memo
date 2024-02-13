@@ -18,7 +18,7 @@ makedocs(;
     ],
 )
 
-deploydocs(;
-    repo="github.com/liuxu89/memo",
-    # devbranch="main",
-)
+#deploydocs(;
+#    repo="github.com/liuxu89/memo",
+#    # devbranch="main",
+#)
