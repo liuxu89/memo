@@ -73,7 +73,12 @@ jobs:
           version: '1.10'
       - name: build doc
         run: |
-          julia --project=docs docs/make.jl
+          julia --project=docs -e '
+            using Pkg
+            Pkg.develop(PackageSpec(path=pwd()))
+            Pkg.instantiate()
+            include("docs/make.jl")
+          '
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
