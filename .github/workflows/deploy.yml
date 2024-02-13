@@ -52,14 +52,14 @@
 # #           DocMeta.setdocmeta!(memo, :DocTestSetup, :(using memo); recursive=true)
 # #           doctest(memo)'
 
-name: CI
+name: Deploy
 on:
   push:
     branches:
       - main
 
 jobs:
-  docs:
+  deploy:
     name: Documentation
     runs-on: ubuntu-latest
     permissions:
