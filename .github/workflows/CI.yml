@@ -73,11 +73,12 @@ jobs:
           version: '1.10'
       - name: build doc
         run: |
-          julia --project=docs -e '
+          cd docs
+          julia --project -e '
             using Pkg
             Pkg.develop(PackageSpec(path=pwd()))
             Pkg.instantiate()
-            include("docs/make.jl")
+            include("make.jl")
           '
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -85,7 +86,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: 'docs/build'
+          path: 'build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
